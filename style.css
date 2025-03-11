@@ -1,7 +1,7 @@
 /* *代表在index.html內的所有指令<>，都會產生一個框線框起來 */
 *{
     /* 產生框線，為實心線條，粗細2px，黑色 */
-    border: solid 2px yellow;
+    /* border: solid 2px yellow; */
 }
 /* 整個視窗畫面設定 */
 html,body{
@@ -22,6 +22,10 @@ html,body{
     /* 設定寬度為380px，且置中在視窗中間 */
     width: 380px;
     /* margin: 0 auto;     */
+    box-shadow: 10px 10px 10px rgba(0,0,0,0.4);
+}
+.box:hover {
+    transform: translate(-5px, -5px);
 }
 .top{
     /* 連結一個網頁的圖片當作.top的背景圖片 */
@@ -32,14 +36,98 @@ html,body{
     /* 把h2的文字置於.top的下方，且文字靠左*/    
     display: flex;    
     align-items: flex-end;
+
+    position: relative; /* 這個屬性是為了讓.circle-container和.rectangle-container可以相對於.top這個父元素來定位 */
 }
 
 .top h2{
     /* 設定文字顏色為白色 */
     color: #fff;   
      /* 距離下方的外距為20px，距離左方的外距為10px  */
-    margin-bottom: 20px;
+    margin-bottom: 1px;
+    /* margin-left: 10px; */
+    letter-spacing: 1px; 
+    padding-left: 10px; 
+    padding-bottom: 10px;
+    width: 100%;  
+    /* 產生一個背景顏色為黑色，透明度為0.4，由下而上漸層 */
+    background: linear-gradient(to top, rgba(0,0,0,1), rgba(0,0,0,0));
+}
+.top h2 .smallText{
+    font-size: 14px;
+}
+
+.circle-container {
+    position: absolute; /* 這個屬性是為了讓.circle可以相對於.circle-container這個父元素來定位 */
+    /* 這個屬性是為了讓.circle-container可以相對於.top這個父元素來定位 */
+    right: 50px;
+    bottom: -25px;
+}
+
+.circle {
+    width: 50px;
+    height: 50px;
+    background-color: #ff7526;
+    border-radius: 50%;
+}
+
+.rectangle-container {
+    position: absolute;/* 這個屬性是為了讓.rectangle可以相對於.rectangle-container這個父元素來定位 */
+    /* 這個屬性是為了讓.rectangle-container可以相對於.top這個父元素來定位 */
+    right: 20px;
+    top: 0px;
+}
+
+.rectangle {
+    width: 25px;
+    height: 50px;
+    background-color: #ff8244;
+}
+
+ul {
+    list-style-type: none;
+    padding: 5px;  
+    margin-left: 5px;
+    letter-spacing: 1px; 
+    margin-top: 20px;   
+}
+li{
+    font-size: 15px;
+    margin-bottom: 5px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 16px;
+    margin-bottom: 10px; 
+}
+
+.btnwebsite {
+    background-color: #ff8244;
+    color: white;
     margin-left: 10px;
-    
-    
+}
+
+.btnwebsite:hover {
+    background-color: #ff9860;
+}
+
+.btnnews {
+    background-color: white;
+    color: black;
+    margin-right: 10px;
+    border: 2px solid black;
+}
+
+.btnnews:hover {
+    background-color: #eee;
+}
+
+.btn a {
+    color: inherit;
+    text-decoration: none;
 }
