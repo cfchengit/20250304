@@ -7,6 +7,7 @@
 html,body{
     /* 設定背景顏色為淺灰色 */
 /*     background-color: #ff7526;  */
+    background: rgba(255, 255, 255, 0.4);
     /* 設定視窗的高度為100% */
     height: 100%;
     /* 設定視窗的寬度為100% */
